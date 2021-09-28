@@ -1,10 +1,15 @@
-import React from 'react'
-import { AppContainer } from './components/AppContainer'
-
-function App() {
-	return (
-        <AppContainer />
-	)
+import React from 'react';
+import AddNinja from './components/TelaAddNinja/AddNinja';
+ 
+export default class App extends React.Component{
+	render(){
+		return (
+        <div>
+			<AddNinja/>
+		</div>
+			)
+	}
+	
 }
 
-export default App
+
