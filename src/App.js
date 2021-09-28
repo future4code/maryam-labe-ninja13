@@ -1,10 +1,17 @@
-import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import React from 'react';
+import styled from 'styled-components';
+import PaginaDeServicos from './components/PaginaDeServicos/PaginaDeServicos'
 
-function App() {
-	return (
-        <AppContainer />
-	)
-}
+class App extends React.Component {
 
-export default App
+	render() {
+
+		return (
+		  <div>
+			  <PaginaDeServicos/>
+		  </div>
+		);
+	  }
+	}
+	
+	export default App;
