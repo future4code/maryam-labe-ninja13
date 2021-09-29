@@ -6,27 +6,27 @@ import PaginaDeServicos from './components/PaginaDeServicos/PaginaDeServicos.js'
 
 
 class App extends React.Component {
-	// state={
-	// 	paginaAtual:"inicio"
-	// }
+	state={
+		paginaAtual:"inicio"
+	}
 	
-	// escolhePagina= () =>{
-	// 	switch(this.state.paginaAtual){
-	// 		case "inicio":
-	// 			return <PaginaInicial/>
-	// 		case "cadastre":
-	// 			return <PaginaDeCadastro/>
-	// 		case "contrate":
-	// 			return <PaginaDeServicos/>
-	// 		default:
-	// 			return <PaginaInicial/>
-	// 	}
-	// }
+	escolhePagina= () =>{
+		switch(this.state.paginaAtual){
+			case "inicio":
+				return <PaginaInicial/>
+			case "cadastre":
+				return <PaginaDeCadastro/>
+			case "contrate":
+				return <PaginaDeServicos/>
+			default:
+				return <PaginaInicial/>
+		}
+	}
 
 	render(){
 		return (
 			<div>
-				{/* {this.escolhePagina()} */}
+				{this.escolhePagina()}
 			</div>
 		)
 	}
