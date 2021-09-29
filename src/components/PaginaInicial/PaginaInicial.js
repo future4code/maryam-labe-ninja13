@@ -18,7 +18,7 @@ margin: 0%;
 color:black;
 `
 const Slogan= styled.p`
-font-size: 25px;
+font-size: 26px;
 margin: 0%;
 color: black;
 `
