@@ -1,11 +1,6 @@
 
 import React from 'react';
 
-// import Header from "./components/Header/Header";
-// import Footer from "./components/Footer/Footer";
-// import PaginaInicial from "./components/PaginaInicial/PaginaInicial";
-import PaginaDeCadastro from './components/PaginaDeCadastro/PaginaDeCadastro';
-// import PaginaDeServicos from "./components/PaginaDeServicos/PaginaDeServicos"
 
 
 export default class App extends React.Component{
@@ -46,9 +41,9 @@ export default class App extends React.Component{
 	render(){
 		return (
         <div>
-	<PaginaDeCadastro/>
+
 		</div>
-			)
+		)
 	}
 	
 }
