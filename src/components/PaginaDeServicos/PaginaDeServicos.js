@@ -24,8 +24,38 @@ width: 250px;
 
 class PaginaDeServicos extends React.Component {
   state = {
-    trabalhos: []
+    trabalhos: [],
+    query: '',
+    filtroMin: '',
+    filtroMax: '',
+    ordenacao:'Sem ordenacao'
   }
+
+  changeQuery = (event) => {
+    this.setState({
+      query: event.target.value
+    })
+  }
+
+  onChangeFiltroMin = (event) => {
+    this.setState({
+      filtroMin: event.target.value
+    })
+  }
+
+  onChangeFiltroMax = (event) => {
+    this.setState({
+      filtroMax: event.target.value
+    })
+  }
+
+  onChangeOrdenacao = (event) => {
+    this.setState({
+      ordenacao: event.target.value
+    })
+  }
+
+
   componentDidMount () {
     this.pegarServicos()
   }
@@ -52,7 +82,34 @@ class PaginaDeServicos extends React.Component {
   }
 
 	render() {
-    const listaDeTrabalhos = this.state.trabalhos.map((trabalho) => {
+    const listaDeTrabalhos = this.state.trabalhos
+    .filter(trabalho =>{
+      return trabalho.title.toLowerCase().includes(this.state.query.toLowerCase()) 
+      // || trabalho.description.toLowerCase().includes(this.state.query.toLowerCase())
+    })
+    .filter(trabalho => {
+      return this.state.filtroMin === '' || trabalho.price >= this.state.filtroMin
+    })
+    .filter(trabalho => {
+      return this.state.filtroMax === '' || trabalho.price <= this.state.filtroMax
+    })
+    .sort((itemA,itemB) => {
+      switch (this.state.ordenacao){
+        case 'title':
+          return itemA.title.localeCompare(itemB.title)
+          case 'dueDate':
+            return new Date(itemA.dueDate).getTime() - new Date(itemB.dueDate).getTime()
+            case 'asc':
+              return itemA.price - itemB.price 
+              case 'desc':
+              return itemB.price - itemA.price
+                default:
+                  return 'Sem ordenacao'
+
+      }
+  
+    })
+    .map((trabalho) => {
       return <CardDeServicos
       titulo= {trabalho.title}
       data= {trabalho.dueDate}
@@ -65,23 +122,36 @@ class PaginaDeServicos extends React.Component {
 		    <EstiloFiltros>
     
                 <EstiloInput
+                type = 'number'
                 placeholder = 'Valor mínimo'
+                value = {this.filtroMin}
+                onChange = {this.onChangeFiltroMin}
                 />
 
                 <EstiloInput
+                type = 'number'
                 placeholder = 'Valor máximo'
+                value = {this.filtroMax}
+                onChange = {this.onChangeFiltroMax}
                 />
 
                 <EstiloInput
-                placeholder = 'Busca por título'
+                type = 'text'
+                placeholder = 'Busca por título ou descrição'
+                value = {this.state.query}
+                onChange = {this.changeQuery}
                 />
 
-			    <EstiloSelect>
-                    <option>Sem ordenação</option>
-                    <option>Menor valor</option>
-                    <option>Maior valor</option>
-                    <option>Título</option>
-                    <option>Prazo</option>
+			          <EstiloSelect 
+                name = 'sort'
+                value = {this.state.ordenacao}
+                onChange = {this.onChangeOrdenacao}
+                >
+                    <option value = 'Sem ordenacao'>Sem ordenação</option>
+                    <option value = 'asc'>Menor valor</option>
+                    <option value = 'desc'>Maior valor</option>
+                    <option value = 'title'>Título</option>
+                    <option value = 'dueDate'>Prazo</option>
                 </EstiloSelect>
 
 		      </EstiloFiltros>
