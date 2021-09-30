@@ -1,5 +1,6 @@
 
 import React from 'react';
+
 import axios from 'axios';
 
 import PaginaInicial from './components/PaginaInicial/PaginaInicial';
@@ -8,6 +9,11 @@ import Footer from './components/Footer/Footer';
 import PaginaDeCadastro from './components/PaginaDeCadastro/PaginaDeCadastro';
 import PaginaDeServicos from './components/PaginaDeServicos/PaginaDeServicos';
 import Carrinho from './components/Carrinho/Carrinho.Js';
+
+
+
+
+	adicionarAoCarrinho = (produt) => {
 
 
 export default class App extends React.Component{
@@ -19,6 +25,7 @@ export default class App extends React.Component{
 	}
 
 	adicionarAoCarrinho = (produt) => {
+
 
         alert("Comprou uma "+produt.title)
         
@@ -58,9 +65,11 @@ export default class App extends React.Component{
 		
 	}
 	paginaInicial = () =>{
+
 		
 		this.setState({pagina: "inicial"})
 		
+
 	}
 
 	paginaCarrinho = () =>{
@@ -81,11 +90,14 @@ export default class App extends React.Component{
 				return <PaginaInicial paginaCadastro={this.paginaCadastro} paginaServicos= {this.paginaServicos}/>
 			case "cadastro":
 				return <div>
+
 					<Header paginaServicos= {this.paginaCarrinho} paginaInicial= {this.paginaInicial}/>
+
 					<PaginaDeCadastro pegarServicos = {this.pegarServicos}/>
 				</div>
 			case "servicos":
 				return <div>
+
 				<Header paginaServicos= {this.paginaCarrinho} paginaInicial= {this.paginaInicial}/>
 				<PaginaDeServicos servicosLoja= {this.state.servicosLoja} adicionarAoCarrinho={this.adicionarAoCarrinho}/>
 				<Footer/>
@@ -96,6 +108,7 @@ export default class App extends React.Component{
 				<Carrinho servicosCarrinho= {this.state.servicosCarrinho}/>
 				<Footer/>
 				</div> 	 
+
 			default:
 				return<PaginaInicial/>
 	}
