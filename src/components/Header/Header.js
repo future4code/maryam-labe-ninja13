@@ -39,8 +39,8 @@ export default class Header extends React.Component{
             <div>
                 {/* <Button onClick={() => props.changePage("paginaInicial")}>Home</Button>
                 <Button onClick={() => props.changePage("paginaDeServicos")}>Serviços</Button>   */}
-                <Button>Home</Button>
-                <Button>Serviços</Button>
+                <Button onClick= {this.props.paginaInicial}>Home</Button>
+                <Button onClick= {this.props.paginaServicos}>Carrinho</Button>
                 </div>
         </ContainerHeader>
         )

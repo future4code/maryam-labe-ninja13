@@ -34,7 +34,7 @@ export default class CardDeServicos extends React.Component {
                 <Info>{this.props.data}</Info>
                 <Info>R${this.props.preco}</Info>
                 <BotoesCard>
-                    <button>Contratar</button>
+                    <button onClick={this.props.adicionarAoCarrinho}>Contratar</button>
                     <button>Detalhes</button>
                 
                 </BotoesCard>
