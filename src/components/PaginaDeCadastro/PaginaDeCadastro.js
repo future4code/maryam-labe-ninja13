@@ -154,11 +154,10 @@ export default class PaginaDeCadastro extends React.Component{
         .then((res)=>{
             this.setState({title:"", description: "", price: "", paymentMethods: [], dueDate: "",})
             alert(`Seu serviço ${this.state.title} foi adicionado com sucesso!`)
-            console.log(res.data)
             this.props.pegarServicos()
         })
         .catch((error)=>{
-            console.log(error.response)
+            alert("Deu um erro inesperado! Tente novamente.")
         })
         
     }
