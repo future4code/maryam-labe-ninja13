@@ -42,17 +42,7 @@ grid-column: 0 -1;
 `
 
 export default class CardDeServicos extends React.Component {
-    state = {
-        detalhes:false
-    }
-    clickDetalhes = ()=>{
-		this.setState({detalhes: !this.state.detalhes})
-	}
-    renderizaCard = () => {
-        switch(this.state.detalhes)
-        {
-            case false:
-                return <CardPequeno>
+
                 <Titulo>{this.props.titulo}</Titulo>
                 <Linha />
                 
@@ -61,6 +51,7 @@ export default class CardDeServicos extends React.Component {
                 <Info>R${this.props.preco}</Info>
                 
                 <BotoesCard>
+                    
                     <button onClick={this.props.adicionarAoCarrinho}>Contratar</button>
                     <button onClick={this.clickDetalhes}>Detalhes</button>
                 

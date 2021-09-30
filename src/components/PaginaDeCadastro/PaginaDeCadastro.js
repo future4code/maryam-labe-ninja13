@@ -27,8 +27,7 @@ const ContainerText = styled.div`
       color:#191970;
       flex-direction: column;
       text-align: center;
-      top: 60px;
-      width: 355px;
+   
       line-height: 30px;
       height: 30px;
       transition: .6s ease-in-out;
@@ -40,7 +39,7 @@ const ContainerText = styled.div`
       color:#191970;
       flex-direction: column;
       text-align: center;
-      top: 200px;
+      top: 230px;
       width: 250px;
       line-height: 30px;
       height: 30px; 
