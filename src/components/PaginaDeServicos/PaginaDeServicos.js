@@ -3,6 +3,14 @@ import styled from 'styled-components';
 import CardDeServicos from './CardDeServico';
 import axios from 'axios';
 
+const DivMae= styled.div`
+img{
+    position:relative ;
+    width:100%;
+    height:100%;
+}
+`
+
 const EstiloFiltros = styled.div`
 display: flex;
 justify-content: space-between;
@@ -10,8 +18,9 @@ margin-left: 15px;
 margin-right: 15px;
 margin-bottom: 40px;
 margin-top: 40px;
+position: absolute;
+top:5%;
 `
-
 const EstiloInput = styled.input`
 width: 250px;
 `
@@ -22,6 +31,8 @@ const EstiloTrabalhos = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 8px;
+position: absolute;
+top:15%;
 `
 
 
@@ -100,7 +111,8 @@ class PaginaDeServicos extends React.Component {
     })
     
 		return (
-      <div>
+      <DivMae>
+        <img src={require("../../img/backInicioECards.png")}/>
 		    <EstiloFiltros>
     
                 <EstiloInput
@@ -141,7 +153,7 @@ class PaginaDeServicos extends React.Component {
           <EstiloTrabalhos>
                     {listaDeTrabalhos}
           </EstiloTrabalhos>
-      </div>
+      </DivMae>
 		);
 	  }
 	}
