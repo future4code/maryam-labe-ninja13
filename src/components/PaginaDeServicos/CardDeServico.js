@@ -22,9 +22,6 @@ justify-content: space-around;
 `
 
 export default class CardDeServicos extends React.Component {
-    state = {
-
-    }
 
     render(){
         return (
@@ -34,6 +31,7 @@ export default class CardDeServicos extends React.Component {
                 <Info>{this.props.data}</Info>
                 <Info>R${this.props.preco}</Info>
                 <BotoesCard>
+                    
                     <button onClick={this.props.adicionarAoCarrinho}>Contratar</button>
                     <button>Detalhes</button>
                 

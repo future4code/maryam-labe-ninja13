@@ -27,7 +27,7 @@ const ContainerText = styled.div`
       color:#fff;
       flex-direction: column;
       text-align: center;
-      top: 60px;
+      top: 160px;
       width: 350px;
       line-height: 30px;
       height: 30px;
@@ -40,7 +40,7 @@ const ContainerText = styled.div`
       color:#fff;
       flex-direction: column;
       text-align: center;
-      top: 200px;
+      top: 230px;
       width: 250px;
       line-height: 30px;
       height: 30px; 
