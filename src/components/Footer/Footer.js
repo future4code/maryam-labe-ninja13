@@ -10,9 +10,8 @@ import IconeTwitter from '../../img/twitter.png';
 const EstiloFooter = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
-border: 1px solid black;
 height: 500px;
-margin-top: 160px;
+
 `
 const EstiloDiv1 = styled.div`
 display: grid;

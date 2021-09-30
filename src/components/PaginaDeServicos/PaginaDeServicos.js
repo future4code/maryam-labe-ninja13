@@ -4,10 +4,12 @@ import CardDeServicos from './CardDeServico';
 import axios from 'axios';
 
 const DivMae= styled.div`
+background-color: #7867BF;
 img{
     position:relative ;
     width:100%;
     height:100%;
+    
 }
 `
 
