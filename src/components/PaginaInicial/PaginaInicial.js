@@ -63,8 +63,8 @@ export default class PaginaInicial extends React.Component{
                 <Slogan>O talento certo no momento certo</Slogan>
                 <Titulo>L A B E N I N J A</Titulo>
                 <div>
-                <Botao1>Se torne um ninja</Botao1>
-                <Botao2>Contrate um ninja</Botao2>
+                <Botao1 onClick={this.props.paginaCadastro}>Se torne um ninja</Botao1>
+                <Botao2 onClick= {this.props.paginaServicos}>Contrate um ninja</Botao2>
                 </div>
             </DivCentralizada>
         )
