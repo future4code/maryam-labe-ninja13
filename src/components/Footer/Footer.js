@@ -57,7 +57,34 @@ margin-left: 15px;
 
 
 class Footer extends React.Component {
+  state = {
+    nomeUsuario: '',
+    emailUsuario: '',
+    telefoneUsuario: '',
+    mensagemUsuario: '',
+};
 
+  alteraNomeUsuario = (event) => {
+    this.setState({nomeUsuario: event.target.value });
+  };
+
+  alteraEmailUsuario = (event) => {
+    this.setState({emailUsuario: event.target.value });
+  };
+
+  alteraTelefoneUsuario = (event) => {
+    this.setState({ telefoneUsuario: event.target.value });
+  };
+
+  alteraMensagemUsuario = (event) => {
+    this.setState({ mensagemUsuario: event.target.value });
+  };
+
+  exibeAlert = () => {
+    alert("Mensagem enviada!")
+
+  this.setState({ nomeUsuario: "", emailUsuario: "", telefoneUsuario: "", mensagemUsuario: "",});
+  };
 	render() {
 		return (
 		    <EstiloFooter>
@@ -80,22 +107,34 @@ class Footer extends React.Component {
 
                 <EstiloDiv2>
                  <EstiloInput
-                 placeholder = "Nome"
+                  type = 'text'
+                  placeholder = "Nome"
+                  value = {this.state.nomeUsuario}
+                  onChange = {this.alteraNomeUsuario}
                  />
 
                  <EstiloInput
-                 placeholder = "Email"
+                  type = 'text'
+                  placeholder = "Email"
+                  value = {this.state.emailUsuario}
+                  onChange = {this.alteraEmailUsuario}
                  /> 
 
                  <EstiloInput
-                 placeholder = "Telefone"
+                  type = 'text'
+                  placeholder = "Telefone"
+                  value = {this.state.telefoneUsuario}
+                  onChange = {this.alteraTelefoneUsuario}
                  /> 
 
                  <EstiloInputMensagem
-                 placeholder = "Insira sua mensagem"
+                  type = 'text'
+                  placeholder = "Insira sua mensagem"
+                  value = {this.state.mensagemUsuario}
+                  onChange = {this.alteraMensagemUsuario}
                  /> 
                 
-                 <EstiloButton>Enviar</EstiloButton>
+                 <EstiloButton onClick = {this.exibeAlert}> Enviar</EstiloButton>
                 </EstiloDiv2>
                 
 
