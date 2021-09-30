@@ -24,20 +24,19 @@ const ContainerText = styled.div`
     h1{
       position: absolute;
       font-size: 40px;
-      color:#fff;
+      color:#191970;
       flex-direction: column;
       text-align: center;
-      top: 160px;
-      width: 350px;
+   
       line-height: 30px;
       height: 30px;
       transition: .6s ease-in-out;
     }
 
-    h5{
+    h4{
       position: absolute;
-      font-size: 20px;
-      color:#fff;
+      font-size: 23px;
+      color:#191970;
       flex-direction: column;
       text-align: center;
       top: 230px;
@@ -50,17 +49,17 @@ const ContainerText = styled.div`
 
 const ContainerCard = styled.div`
     display: inline-flex;
-    width:98vw;
+    width:100%;
 `
 
 const ContainerCadastro = styled.div`
     display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   width:48vw;
-   height: 100vh;
-   background-color: #7867BF;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:50%;
+    height: 100vh;
+    background-color: #7867BF;
 
     input{
         border-radius: 8px;
@@ -75,7 +74,7 @@ const ContainerCadastro = styled.div`
         margin-top: 15px;
         border-radius: 8px;
         border: none;
-        width: 35vw;
+        width: 33.5vw;
         height: 5em;
         font-size: 16px; 
     }
@@ -90,10 +89,16 @@ const ContainerCadastro = styled.div`
         min-width: 2rem;
         transition: .5s ease-in-out;
         cursor: pointer;
+        border-radius: 4px;
     }
 
     button:hover{
-        background-color: whitesmoke;
+        background-color: #836FFF;
+        border-radius: 4px;
+    }
+    button:active{
+        background-color:#6959CD ;
+        border-radius: 4px;
     }
 `
 
@@ -165,7 +170,7 @@ export default class PaginaDeCadastro extends React.Component{
                 <ContainerText>
                 <img src={require('../../img/Sofa-Cadastro.png')} alt="imagem de um sofa com mesinha" />
                 <h1>SE TORNE UM NINJA</h1>
-                <h5>Mostre-nos seu talento!</h5>
+                <h4>Mostre-nos seu talento!</h4>
                 </ContainerText>
                 <ContainerCadastro>
                 <input

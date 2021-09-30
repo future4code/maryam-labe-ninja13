@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import styled from 'styled-components';
 import backInicioECards from '../../img/backInicioECards.png'
+import '../../../src/App.css'
 
 const DivCentralizada= styled.div`
 display: flex;
@@ -17,8 +18,8 @@ img{
 }
 `
 const Titulo= styled.h1`
-font-size: 130px;
-margin-bottom:15%;
+font-size: 135px;
+margin-bottom:5%;
 color:black;
 position: absolute;
 `
@@ -28,19 +29,6 @@ margin-bottom: 30%;
 color: black;
 position: absolute;
 `
-const Botao1= styled.button`
-padding:8px;
-margin: 10px;
-border-radius: 6px;
-background-color:black;
-color:lightgray ;
-position: absolute;
-/* z-index:1; */
-top:60%;
-left:52%;
-display: flex;
-justify-content:space-evenly;
-`
 const Botao2= styled.button`
 padding:8px;
 margin: 10px;
@@ -48,11 +36,40 @@ border-radius: 6px;
 background-color:black;
 color:lightgray ;
 position: absolute;
-/* z-index:1; */
-top:60%;
+top:70%;
+left:52%;
+display: flex;
+justify-content:space-evenly;
+width: 200px;
+transition: .5s ease-in-out;
+cursor: pointer;
+:hover{
+    background-color: #A020F0;
+}
+:active{
+    background-color: darkmagenta;
+}
+`
+const Botao1= styled.button`
+padding:8px;
+margin: 10px;
+border-radius: 6px;
+background-color:black;
+color:lightgray ;
+position: absolute;
+top:70%;
 right:52%;
 display: flex;
 justify-content:space-evenly;
+width: 200px;
+transition: .5s ease-in-out;
+cursor: pointer;
+:hover{
+    background-color: #A020F0;
+}
+:active{
+    background-color:darkmagenta ;
+}
 `
 
 export default class PaginaInicial extends React.Component{
@@ -63,8 +80,8 @@ export default class PaginaInicial extends React.Component{
                 <Slogan>O talento certo no momento certo</Slogan>
                 <Titulo>L A B E N I N J A</Titulo>
                 <div>
-                <Botao1 onClick={this.props.paginaCadastro}>Se torne um ninja</Botao1>
-                <Botao2 onClick= {this.props.paginaServicos}>Contrate um ninja</Botao2>
+                <Botao2 onClick= {this.props.paginaServicos}>Contrate um Ninja</Botao2>
+                <Botao1 onClick={this.props.paginaCadastro}>Seja um Ninja</Botao1>
                 </div>
             </DivCentralizada>
         )
