@@ -18,13 +18,17 @@ width: 250px;
 const EstiloSelect = styled.select`
 width: 250px;
 `
-
+const EstiloTrabalhos = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-gap: 8px;
+`
 
 
 
 class PaginaDeServicos extends React.Component {
   state = {
-    trabalhos: [],
+    
     query: '',
     filtroMin: '',
     filtroMax: '',
@@ -56,33 +60,10 @@ class PaginaDeServicos extends React.Component {
   }
 
 
-  componentDidMount () {
-    this.pegarServicos()
-  }
 
-  pegarServicos= () =>{
-
-    const url ="https://labeninjas.herokuapp.com/jobs"
-
-    axios.get(url, {
-      headers: {
-        Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
-      }
-      })
-      
-      .then((res) => {
-        console.log(res)
-        this.setState({trabalhos:res.data.jobs})
-      })
-      
-      .catch((err) =>{
-        console.log(err)
-      })
-    
-  }
 
 	render() {
-    const listaDeTrabalhos = this.state.trabalhos
+    const listaDeTrabalhos = this.props.servicosLoja
     .filter(trabalho =>{
       return trabalho.title.toLowerCase().includes(this.state.query.toLowerCase()) 
       // || trabalho.description.toLowerCase().includes(this.state.query.toLowerCase())
@@ -114,9 +95,10 @@ class PaginaDeServicos extends React.Component {
       titulo= {trabalho.title}
       data= {trabalho.dueDate}
       preco= {trabalho.price}
+      adicionarAoCarrinho={() =>this.props.adicionarAoCarrinho(trabalho)}
       />
     })
-    console.log(this.state.trabalhos)
+    
 		return (
       <div>
 		    <EstiloFiltros>
@@ -156,9 +138,9 @@ class PaginaDeServicos extends React.Component {
 
 		      </EstiloFiltros>
 
-          <div>
+          <EstiloTrabalhos>
                     {listaDeTrabalhos}
-          </div>
+          </EstiloTrabalhos>
       </div>
 		);
 	  }

@@ -131,6 +131,7 @@ export default class PaginaDeCadastro extends React.Component{
 
 
     criarEmprego = ( ) =>{
+        
         const body = {
             title: this.state.title,
             description: this.state.description,
@@ -149,10 +150,12 @@ export default class PaginaDeCadastro extends React.Component{
             this.setState({title:"", description: "", price: "", paymentMethods: [], dueDate: "",})
             alert(`Seu serviço ${this.state.title} foi adicionado com sucesso!`)
             console.log(res.data)
+            this.props.pegarServicos()
         })
         .catch((error)=>{
             console.log(error.response)
         })
+        
     }
 
     render(){
@@ -171,14 +174,14 @@ export default class PaginaDeCadastro extends React.Component{
                 value={this.state.title}
                 onChange={this.handleTitulo}
                 />
-                 <input
-                 type="text"
+                <input
+                type="text"
                 placeholder={"Descrição"}
                 value={this.state.description}
                 onChange={this.handleDescricao}
                 />
-                 <input
-                 type= "Number"
+                <input
+                type= "Number"
                 placeholder={"Preço"}
                 value={this.state.price}
                 onChange={this.handlePreco}
