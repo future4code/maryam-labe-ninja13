@@ -66,7 +66,7 @@ class PaginaDeServicos extends React.Component {
     const listaDeTrabalhos = this.props.servicosLoja
     .filter(trabalho =>{
       return trabalho.title.toLowerCase().includes(this.state.query.toLowerCase()) 
-      // || trabalho.description.toLowerCase().includes(this.state.query.toLowerCase())
+      || trabalho.description.toLowerCase().includes(this.state.query.toLowerCase())
     })
     .filter(trabalho => {
       return this.state.filtroMin === '' || trabalho.price >= this.state.filtroMin
@@ -104,30 +104,30 @@ class PaginaDeServicos extends React.Component {
 		    <EstiloFiltros>
     
                 <EstiloInput
-                type = 'number'
-                placeholder = 'Valor mínimo'
-                value = {this.filtroMin}
-                onChange = {this.onChangeFiltroMin}
+                  type = 'number'
+                  placeholder = 'Valor mínimo'
+                  value = {this.filtroMin}
+                  onChange = {this.onChangeFiltroMin}
                 />
 
                 <EstiloInput
-                type = 'number'
-                placeholder = 'Valor máximo'
-                value = {this.filtroMax}
-                onChange = {this.onChangeFiltroMax}
+                  type = 'number'
+                  placeholder = 'Valor máximo'
+                  value = {this.filtroMax}
+                  onChange = {this.onChangeFiltroMax}
                 />
 
                 <EstiloInput
-                type = 'text'
-                placeholder = 'Busca por título ou descrição'
-                value = {this.state.query}
-                onChange = {this.changeQuery}
+                  type = 'text'
+                  placeholder = 'Busca por título ou descrição'
+                  value = {this.state.query}
+                  onChange = {this.changeQuery}
                 />
 
 			          <EstiloSelect 
-                name = 'sort'
-                value = {this.state.ordenacao}
-                onChange = {this.onChangeOrdenacao}
+                  name = 'sort'
+                  value = {this.state.ordenacao}
+                  onChange = {this.onChangeOrdenacao}
                 >
                     <option value = 'Sem ordenacao'>Sem ordenação</option>
                     <option value = 'asc'>Menor valor</option>
