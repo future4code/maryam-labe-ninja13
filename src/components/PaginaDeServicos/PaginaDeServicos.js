@@ -12,6 +12,7 @@ img{
 `
 
 const EstiloFiltros = styled.div`
+
 display: flex;
 justify-content: space-between;
 margin-left: 15px;
@@ -28,6 +29,8 @@ const EstiloSelect = styled.select`
 width: 250px;
 `
 const EstiloTrabalhos = styled.div`
+
+
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 8px;
@@ -106,6 +109,8 @@ class PaginaDeServicos extends React.Component {
       titulo= {trabalho.title}
       data= {trabalho.dueDate}
       preco= {trabalho.price}
+      descricao = {trabalho.description}
+      formasPagamento= {trabalho.paymentMethods}
       adicionarAoCarrinho={() =>this.props.adicionarAoCarrinho(trabalho)}
       />
     })
