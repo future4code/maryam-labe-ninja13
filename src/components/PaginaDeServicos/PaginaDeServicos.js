@@ -4,14 +4,17 @@ import CardDeServicos from './CardDeServico';
 import axios from 'axios';
 
 const DivMae= styled.div`
+background-color: #7867BF;
 img{
     position:relative ;
     width:100%;
     height:100%;
+    
 }
 `
 
 const EstiloFiltros = styled.div`
+
 display: flex;
 justify-content: space-between;
 margin-left: 15px;
@@ -28,6 +31,8 @@ const EstiloSelect = styled.select`
 width: 250px;
 `
 const EstiloTrabalhos = styled.div`
+
+
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-gap: 8px;
@@ -106,6 +111,8 @@ class PaginaDeServicos extends React.Component {
       titulo= {trabalho.title}
       data= {trabalho.dueDate}
       preco= {trabalho.price}
+      descricao = {trabalho.description}
+      formasPagamento= {trabalho.paymentMethods}
       adicionarAoCarrinho={() =>this.props.adicionarAoCarrinho(trabalho)}
       />
     })
