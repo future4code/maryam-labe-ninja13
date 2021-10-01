@@ -7,6 +7,7 @@ const ContainerHeader = styled.header`
     align-items: center;
     justify-content: space-around;
     background-color: #7869BF;
+    height: 60px
 `
 const Button = styled.button`
     border: none;
