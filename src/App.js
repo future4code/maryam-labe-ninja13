@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import PaginaDeCadastro from "./components/PaginaDeCadastro/PaginaDeCadastro";
 import PaginaDeServicos from "./components/PaginaDeServicos/PaginaDeServicos";
-import Carrinho from "./components/Carrinho/Carrinho";
+import Carrinho from "./components/Carrinho/Carrinho"
 
 export default class App extends React.Component {
   state = {

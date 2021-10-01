@@ -14,9 +14,7 @@ img{
 `
 
 const EstiloFiltros = styled.div`
-
 display: flex;
-justify-content: space-between;
 margin-left: 15px;
 margin-right: 15px;
 margin-bottom: 40px;
@@ -25,10 +23,53 @@ position: absolute;
 top:5%;
 `
 const EstiloInput = styled.input`
-width: 250px;
+display: flex;
+margin-left: 50px;
+width: 290px;
+border-radius:6px;
+cursor: pointer;
+box-shadow:inset 0px 1px 0px 0px #e3f1e3;
+font-size: medium;
+:hover{
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+active {
+transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
 `
 const EstiloSelect = styled.select`
-width: 250px;
+display: flex;
+margin-left: 50px;
+width: 290px;
+border-radius:6px;
+cursor: pointer;
+box-shadow:inset 0px 1px 0px 0px #e3f1e3;
+font-size: medium;
+:hover{
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+active {
+transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
 `
 const EstiloTrabalhos = styled.div`
 
@@ -39,6 +80,12 @@ grid-gap: 8px;
 position: absolute;
 top:15%;
 left: 3%;
+`
+
+const AlinhaFiltro = styled.div`
+display: flex;
+justify-content: center;
+margin-left: 35px;
 `
 
 
@@ -120,30 +167,38 @@ class PaginaDeServicos extends React.Component {
     
 		return (
       <DivMae>
+      
         <img src={require("../../img/backInicioECards.png")}/>
 		    <EstiloFiltros>
-    
+              
+              <AlinhaFiltro>
                 <EstiloInput
                   type = 'number'
                   placeholder = 'Valor mínimo'
                   value = {this.filtroMin}
                   onChange = {this.onChangeFiltroMin}
                 />
+           
 
+              
                 <EstiloInput
                   type = 'number'
                   placeholder = 'Valor máximo'
                   value = {this.filtroMax}
                   onChange = {this.onChangeFiltroMax}
                 />
+              
 
+              
                 <EstiloInput
                   type = 'text'
                   placeholder = 'Busca por título ou descrição'
                   value = {this.state.query}
                   onChange = {this.changeQuery}
                 />
-
+              
+              
+              
 			          <EstiloSelect 
                   name = 'sort'
                   value = {this.state.ordenacao}
@@ -155,8 +210,9 @@ class PaginaDeServicos extends React.Component {
                     <option value = 'title'>Título</option>
                     <option value = 'dueDate'>Prazo</option>
                 </EstiloSelect>
+              </AlinhaFiltro>
 
-		      </EstiloFiltros>
+		        </EstiloFiltros>
 
           <EstiloTrabalhos>
                     {listaDeTrabalhos}
