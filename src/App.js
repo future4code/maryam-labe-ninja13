@@ -7,7 +7,7 @@ import Header  from './components/Header/Header'
 import Footer from './components/Footer/Footer';
 import PaginaDeCadastro from './components/PaginaDeCadastro/PaginaDeCadastro';
 import PaginaDeServicos from './components/PaginaDeServicos/PaginaDeServicos';
-import Carrinho from './components/Carrinho/Carrinho.js';
+import Carrinho from './components/Carrinho/Carrinho';
 
 
 
