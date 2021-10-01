@@ -72,11 +72,14 @@ const ContainerItens = styled.div`
 
 
 
+
+
 export default class Carrinho extends React.Component{
 
   
 
     render (){
+        console.log(this.props.servicoCarrinho)
             const listaCarrinho = this.props.servicosCarrinho.map((servico, index) =>{
                 return  <ContainerItens key={servico.id}>
                             <h3>{servico.title}</h3>

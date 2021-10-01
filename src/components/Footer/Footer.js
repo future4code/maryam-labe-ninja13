@@ -10,27 +10,29 @@ import IconeTwitter from '../../img/twitter.png';
 const EstiloFooter = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
-border: 1px solid black;
 height: 500px;
-margin-top: 160px;
+
 `
 const EstiloDiv1 = styled.div`
 display: grid;
 align-items: center;
 justify-items: center;
-background-color: #7867BF;
+background-color: #9150B9;
 `
 const EstiloDiv2 = styled.div`
 display: grid;
 align-items: center;
 justify-items: center;
-background-color: #7867BF;
+background-color: #9150B9;
 // background: linear-gradient(white, 7867BF)
 `
 const EstiloInput = styled.input`
 border: 2px solid black;
 width: 400px;
 height: 30px;
+border-radius: 6px;
+margin-top: 5px;
+background-color: #DDC3F8;
 
 `
 const EstiloInputMensagem = styled.input`
@@ -38,7 +40,8 @@ border: 2px solid black;
 width: 400px;
 height: 200px;
 margin-bottom: 0px;
-
+border-radius: 6px;
+background-color: #DDC3F8 ;
 `
 const EstiloButton = styled.button`
 display: grid;
@@ -46,9 +49,17 @@ align-items: center;
 justify-items: center;
 width: 100px;
 margin: 0px;
-padding: 0px;
+padding: 5px;
 background-color:black;
 color:white;
+border-radius: 4px;
+transition: .5s ease-in-out;
+:hover{
+  background-color: #1C1C1C;
+}
+:active{
+  background-color: #363636;
+}
 `
 const EstiloIcones = styled.img`
 width: 40px;
