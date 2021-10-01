@@ -172,6 +172,7 @@ export default class PaginaDeCadastro extends React.Component{
                 <h4>Mostre-nos seu talento!</h4>
                 </ContainerText>
                 <ContainerCadastro>
+                    <h1>Cadastre-se</h1>
                 <input
                 type="text"
                 placeholder={"Titulo"}

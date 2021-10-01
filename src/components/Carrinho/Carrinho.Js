@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const ContainerTotal = styled.div`
-    display: inline-flex;
-    width:98vw;
-    height:74.5vh;
+    display:flex;
+    width:100%;
+    height:100vh;
     background-color: #DDC3F8;
-     
 `
 const ContainerList = styled.div`
     display: inline-flex;
@@ -15,7 +14,11 @@ const ContainerList = styled.div`
     flex-direction: column;
     height: 100vh;
     width:50vw;
-    background-color: #DDC3F8;  
+    background-color: #DDC3F8;
+    margin-bottom:45px ;
+    h1{
+        display: inline;
+    }
 `
 const ContainerValorTotal = styled.div`
     display: flex;
@@ -43,8 +46,7 @@ const ContainerImagem = styled.div`
     width:48vw;
     height: 100vh;
     img{
-        height: 100vh;
-        width:100%; 
+        height:100vh; 
         }
 `
 const ContainerItens = styled.div`
@@ -90,7 +92,12 @@ export default class Carrinho extends React.Component{
                
         return (
           <ContainerTotal> 
+              <ContainerImagem>
+                    <img src={require('../../img/back-carrinho.jpg')} alt="homem feliz por ser cadastrar no ninja" />
+                </ContainerImagem>
+            
                <ContainerList>
+                   <h1>Carrinho</h1>
                 {listaCarrinho}
                 
                 <ContainerValorTotal>
@@ -99,12 +106,8 @@ export default class Carrinho extends React.Component{
                   <p>R$ {this.props.precoTotal},00</p>                
                   <button onClick={() => this.props.removerTudo()}>Contratar Serviços</button>
                 </ContainerValorTotal>
-             
                 </ContainerList>
-                <ContainerImagem>
-                    <img src={require('../../img/back-carrinho.jpg')} alt="homem feliz por ser cadastrar no ninja" />
-                </ContainerImagem>
-            
+                
           </ContainerTotal>
 
         )

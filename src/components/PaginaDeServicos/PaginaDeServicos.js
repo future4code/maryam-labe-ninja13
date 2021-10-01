@@ -24,7 +24,7 @@ top:5%;
 `
 const EstiloInput = styled.input`
 display: flex;
-margin-left: 50px;
+margin-left: 40px;
 width: 290px;
 border-radius:6px;
 cursor: pointer;
@@ -59,7 +59,7 @@ font-size: medium;
 transform: translateY(-3px);
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
-active {
+:active {
 transform: translateY(-1px);
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }

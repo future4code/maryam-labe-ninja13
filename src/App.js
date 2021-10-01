@@ -133,7 +133,8 @@ export default class App extends React.Component {
           return (
             <div>
               <Header
-                paginaServicos={this.paginaCarrinho}
+                paginaCarrinho={this.paginaCarrinho}
+                paginaServicos={this.paginaServicos}
                 paginaInicial={this.paginaInicial}
               />
               <PaginaDeCadastro pegarServicos={this.pegarServicos} />
@@ -143,7 +144,8 @@ export default class App extends React.Component {
           return (
             <div>
               <Header
-                paginaServicos={this.paginaCarrinho}
+                paginaCarrinho={this.paginaCarrinho}
+                paginaServicos={this.paginaServicos}
                 paginaInicial={this.paginaInicial}
               />
               <PaginaDeServicos
@@ -157,7 +159,8 @@ export default class App extends React.Component {
           return (
             <div>
               <Header
-                paginaServicos={this.paginaCarrinho}
+                paginaCarrinho={this.paginaCarrinho}
+                paginaServicos={this.paginaServicos}
                 paginaInicial={this.paginaInicial}
               />
               <Carrinho
