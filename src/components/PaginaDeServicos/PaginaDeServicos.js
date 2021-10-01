@@ -4,7 +4,7 @@ import CardDeServicos from './CardDeServico';
 import axios from 'axios';
 
 const DivMae= styled.div`
-background-color: #7867BF;
+background-color: #9150B9;
 img{
     position:relative ;
     width:100%;
@@ -34,10 +34,11 @@ const EstiloTrabalhos = styled.div`
 
 
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 grid-gap: 8px;
 position: absolute;
 top:15%;
+left: 3%;
 `
 
 
