@@ -7,7 +7,8 @@ import Header  from './components/Header/Header'
 import Footer from './components/Footer/Footer';
 import PaginaDeCadastro from './components/PaginaDeCadastro/PaginaDeCadastro';
 import PaginaDeServicos from './components/PaginaDeServicos/PaginaDeServicos';
-import Carrinho from './components/Carrinho/Carrinho.Js';
+import Carrinho from './components/Carrinho/Carrinho.js';
+
 
 
 export default class App extends React.Component{
@@ -19,17 +20,17 @@ export default class App extends React.Component{
 	}
 
 	adicionarAoCarrinho = (produt) => {
-
+		
         alert("Comprou uma "+produt.title)
         
         const itemCarrinho = this.state.servicosLoja.find(produto => produto.id === produt.id);
-        const valorProduto=produt.preco;
+        const valorProduto=produt.price;
         let total=this.state.precoTotal+valorProduto;
         const novoArray = [...this.state.servicosCarrinho, itemCarrinho];
         this.setState({ servicosCarrinho: novoArray })
         this.setState({precoTotal:total})
         console.log(this.state.precoTotal)
-		console.log(this.state.servicosCarrinho)
+		// console.log(this.state.servicosCarrinho)
     }
 
 	componentDidMount () {
@@ -57,10 +58,35 @@ export default class App extends React.Component{
 		})
 		
 	}
+
+    removerDoCarrinho = (indexremover) => {
+      
+	    const copiacarrinho = this.state.servicosCarrinho.filter((produt, index) => {
+            if (index ===indexremover){
+                const valorProduto=produt.price
+                let total =this.state.precoTotal-valorProduto
+                this.setState({precoTotal:total})
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+        })
+        this.setState({servicosCarrinho:copiacarrinho})
+    }
+
+	removerTudo = () => {
+		const removerCarrinho = [] 
+		const removerValor = 0
+		this.setState({servicosCarrinho:removerCarrinho})
+		this.setState({precoTotal:removerValor})
+	}
+
 	paginaInicial = () =>{
-		
+
 		this.setState({pagina: "inicial"})
-		
 	}
 
 	paginaCarrinho = () =>{
@@ -93,7 +119,7 @@ export default class App extends React.Component{
 			case "carrinho":
 				return <div>
 				<Header paginaServicos= {this.paginaCarrinho} paginaInicial= {this.paginaInicial}/>
-				<Carrinho servicosCarrinho= {this.state.servicosCarrinho}/>
+				<Carrinho servicosCarrinho= {this.state.servicosCarrinho} removerDoCarrinho={this.removerDoCarrinho} precoTotal={this.state.precoTotal} removerTudo={this.removerTudo}/>
 				<Footer/>
 				</div> 	 
 			default:
@@ -104,7 +130,6 @@ export default class App extends React.Component{
 	render(){
 		return (
         <div>
-			
 			{this.renderizarPaginas()}	
 		</div>
 		)

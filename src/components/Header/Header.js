@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import ninja from '../../img/ninja.png';
 
 const ContainerHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: purple;
+    background-color: #7869BF;
 `
 const Button = styled.button`
     border: none;
@@ -13,35 +14,25 @@ const Button = styled.button`
     margin: 4px 2px;
     cursor: pointer;
 `
+const ButtonHome = styled.button`
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
+`
+const Img = styled.img`
+    width: 30px;
+    height: 40px;
+`
 
 export default class Header extends React.Component{
-    // state = {
-    // 	currentPage: "paginaInicial"
-    // }
-
-    // changePage = (currentPage) => {
-	// 	this.setState({currentPage: currentPage})
-	//   }
     render(){
-
-    // const renderCurrentPage = () => {
-	// 	if(this.state.currentPage === "paginaInicial"){
-	// 	  return <PaginaInicial/>
-	// 	}else if(this.state.currentPage === "paginaDeServicos"){
-	// 	  return<PaginaDeServicos/>
-	// 	}
-		// }
-
     return(
         <ContainerHeader>
-            <div>ImagemLogo</div>
-            <h3> LabeNinjas </h3>
+            <ButtonHome onClick= {this.props.paginaInicial}><Img src={ninja}/></ButtonHome>         
             <div>
-                {/* <Button onClick={() => props.changePage("paginaInicial")}>Home</Button>
-                <Button onClick={() => props.changePage("paginaDeServicos")}>Serviços</Button>   */}
                 <Button onClick= {this.props.paginaInicial}>Home</Button>
                 <Button onClick= {this.props.paginaServicos}>Carrinho</Button>
-                </div>
+            </div>
         </ContainerHeader>
         )
 
