@@ -45,6 +45,7 @@ export default class App extends React.Component {
       this.setState({
         servicosCarrinho: JSON.parse(localStorage.getItem("servicosCarrinho")),
       });
+
     }
     if (localStorage.hasOwnProperty("precoTotal")) {
       this.setState({
