@@ -4,7 +4,7 @@ import styled from "styled-components";
 const CardPequeno = styled.div`
 background-color: #DDC3F8;
 opacity: 0.9;
-width: 244px;
+width: 245px;
 height: 284px;
 border: 2px solid black;
 margin: 5px;
